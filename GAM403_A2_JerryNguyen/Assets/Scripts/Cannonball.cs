@@ -7,6 +7,8 @@ public class Cannonball : MonoBehaviour
     public float speed;
     public float killTime;
     public Rigidbody rb;
+    public GameObject spark;
+    Collider col;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,10 @@ public class Cannonball : MonoBehaviour
     }
 
     // Update is called once per frame
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
     void Update()
     {
         
