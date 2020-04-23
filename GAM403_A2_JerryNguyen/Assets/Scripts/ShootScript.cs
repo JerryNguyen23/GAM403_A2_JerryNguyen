@@ -7,10 +7,11 @@ public class ShootScript : MonoBehaviour
     public GameObject cannonball;
     public Transform barrel;
     public float ballSpeed;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +20,10 @@ public class ShootScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Go");
         }
     }
     void Shoot()
