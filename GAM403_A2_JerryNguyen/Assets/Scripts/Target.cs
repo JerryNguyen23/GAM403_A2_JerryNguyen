@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int points;
+    private Score score;
     Collider col;
     void Start()
     {
         col = GetComponent<Collider>();
+        score = GameObject.FindObjectOfType<Score>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
     private void OnCollisionEnter(Collision collision)
     {
-     Destroy(gameObject);
+        score.AddScore(points);
+        Destroy(gameObject);
     }
 }

@@ -25,6 +25,14 @@ public class ShootScript : MonoBehaviour
         {
             animator.SetTrigger("Go");
         }
+        if (Input.GetKeyDown(KeyCode.P)) 
+        {
+            Time.timeScale = 0;
+        }
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            Time.timeScale = 1;
+        }
     }
     void Shoot()
     {
